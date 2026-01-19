@@ -4,23 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ODE — To Express, Not Impress</title>
-    <meta name="description" content="ODE — Fashion meets lifestyle. To Express, Not Impress." />
+    <meta name="description" content="ODE — To Express, Not Impress. Wear the Message." />
     <meta name="theme-color" content="#0b0b0c" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Elegant modern font pairing -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+    <!-- Shooting Stars Background -->
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
     <div class="noise" aria-hidden="true"></div>
 
     <header class="header">
         <nav class="nav">
             <a class="brand" href="#top" aria-label="ODE home">
-                <span class="brandMark" aria-hidden="true"></span>
+                <img class="brandLogo" src="assets/ode.png" alt="ODE logo" />
                 <span class="brandText">ODE</span>
             </a>
 
@@ -30,6 +32,7 @@
 
             <div class="navLinks" id="navLinks">
                 <a href="#drops">Drops</a>
+                <a href="#dna">Belief</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
                 <a class="pill" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Shop</a>
@@ -42,15 +45,22 @@
         <section class="hero">
             <div class="heroInner">
                 <div class="heroCopy">
-                    <div class="eyebrow">Fashion meets lifestyle</div>
+                    <div class="eyebrow">Motto-Design • Faith meets lifestyle</div>
+
                     <h1 class="headline">
                         ODE — <span class="accent">To Express, Not Impress</span>
                     </h1>
+
                     <p class="subhead">
-                        Minimal by design. Meaning by intention. Built to be worn—quietly bold.
+                        I design to express, not to impress — turning messages into daily movement.
                     </p>
 
-                    <div class="ctaRow" id="shop">
+                    <div class="motto">
+                        <span class="mottoLabel">Motto</span>
+                        <span class="mottoText">“Wear the Message.”</span>
+                    </div>
+
+                    <div class="ctaRow">
                         <a class="btn primary" href="#drops">View Drop</a>
                         <a class="btn" href="#contact">Get Updates</a>
                     </div>
@@ -74,11 +84,13 @@
                 <div class="heroVisual">
                     <div class="cardVisual">
                         <div class="cardTop">
+                            <div class="cardBrand">
+                                <img class="cardLogo" src="assets/ode.png" alt="ODE logo" />
+                                <div class="smallCaps">ODE CONCEPT</div>
+                            </div>
                             <div class="chip"></div>
-                            <div class="smallCaps">ODE CONCEPT</div>
                         </div>
 
-                        <!-- Replace these placeholders with your own shirt mockups -->
                         <div class="imageGrid">
                             <div class="ph" data-label="Front Mockup"></div>
                             <div class="ph" data-label="Back Mockup"></div>
@@ -109,7 +121,7 @@
                         <p>Everyday essential. Premium feel.</p>
                         <div class="productFooter">
                             <span class="tag">Drop 001</span>
-                            <button class="linkBtn" <a class="linkBtn" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Buy</a>"Add a real shop later — or link to IG/WhatsApp now.">Buy</button>
+                            <a class="linkBtn" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Buy</a>
                         </div>
                     </div>
                 </article>
@@ -121,7 +133,7 @@
                         <p>Quiet statement. Meaning-forward design.</p>
                         <div class="productFooter">
                             <span class="tag">Limited</span>
-                            <button class="linkBtn" <a class="linkBtn" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Buy</a>"You can turn this into a pre-order button easily.">Preorder</button>
+                            <a class="linkBtn" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Preorder</a>
                         </div>
                     </div>
                 </article>
@@ -133,10 +145,75 @@
                         <p>Texture > loud graphics. Elevated minimal.</p>
                         <div class="productFooter">
                             <span class="tag">Premium</span>
-                            <button class="linkBtn" <a class="linkBtn" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Buy</a>"Swap this to a payment link later (Stripe / PayNow).">Notify me</button>
+                            <a class="linkBtn" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">Notify me</a>
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <!-- DNA -->
+        <section class="section" id="dna">
+            <div class="sectionHead">
+                <h2>Belief, Mission & Vision</h2>
+                <p>ODE is built on meaning — not noise.</p>
+            </div>
+
+            <div class="dnaGrid">
+                <div class="dnaCard">
+                    <div class="dnaTop">
+                        <span class="dnaKicker">Belief</span>
+                        <span class="dnaMark" aria-hidden="true"></span>
+                    </div>
+                    <p class="dnaText">
+                        We believe faith begins with a message — and a motto can transform a lifestyle.
+                    </p>
+                </div>
+
+                <div class="dnaCard">
+                    <div class="dnaTop">
+                        <span class="dnaKicker">Mission</span>
+                        <span class="dnaMark" aria-hidden="true"></span>
+                    </div>
+                    <p class="dnaText">
+                        ODE exists to transform lifestyles through motto-design, turning messages into daily movement.
+                    </p>
+                </div>
+
+                <div class="dnaCard">
+                    <div class="dnaTop">
+                        <span class="dnaKicker">Vision</span>
+                        <span class="dnaMark" aria-hidden="true"></span>
+                    </div>
+                    <p class="dnaText">
+                        To build a generation shaped by faith-driven mottos — wearing meaning and living with purpose.
+                    </p>
+                </div>
+            </div>
+
+            <div class="wearMessage">
+                <div class="wearInner">
+                    <div class="wearLeft">
+                        <div class="wearTag">Signature</div>
+                        <h3>Wear the Message.</h3>
+                        <p>
+                            A motto isn’t just words. It becomes identity. It becomes lifestyle.
+                            We design so what you wear reflects what you live.
+                        </p>
+                    </div>
+
+                    <div class="wearRight">
+                        <div class="wearSteps">
+                            <div class="step"><div class="stepNum">01</div><div class="stepText">Wear it</div></div>
+                            <div class="step"><div class="stepNum">02</div><div class="stepText">Live it</div></div>
+                            <div class="step"><div class="stepNum">03</div><div class="stepText">Pass it on</div></div>
+                        </div>
+
+                        <a class="btn primary full" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">
+                            Shop on Instagram
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -144,7 +221,7 @@
         <section class="section" id="about">
             <div class="sectionHead">
                 <h2>About ODE</h2>
-                <p>Purpose-first fashion—built around expression, not performance.</p>
+                <p>Purpose-first fashion — built around expression, not performance.</p>
             </div>
 
             <div class="aboutGrid">
@@ -163,9 +240,7 @@
 
                 <div class="aboutCard">
                     <h3>Brand message</h3>
-                    <p class="quote">
-                        “To Express, Not Impress.”
-                    </p>
+                    <p class="quote">“To Express, Not Impress.”</p>
                     <p>
                         If you want, we can add a proper lookbook page, size guide, shipping policy,
                         and a real checkout next.
@@ -185,8 +260,6 @@
                 <p>Drop your email for updates, or link your socials below.</p>
             </div>
 
-            <!-- This form works with Formspree if you paste their action URL.
-                 Otherwise it will just show a message (no backend). -->
             <div class="contactGrid">
                 <form class="form" id="contactForm">
                     <label>
@@ -202,40 +275,32 @@
                         <textarea name="message" rows="5" placeholder="Tell us what you’re looking for…" required></textarea>
                     </label>
                     <button class="btn primary full" type="submit">Send</button>
-                    <p class="fineprint">
-                        No spam. Just drop updates.
-                    </p>
+                    <p class="fineprint">No spam. Just drop updates.</p>
                 </form>
 
                 <div class="contactCard">
                     <h3>Socials</h3>
-                    <p>Replace these links with your real ones.</p>
+                    <p>Connect with us here.</p>
 
                     <div class="socialList">
                         <a class="social" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">
-                            <span class="dot"></span>
-                            Instagram
-                            <span class="arrow">↗</span>
+                            <span class="dot"></span>Instagram<span class="arrow">↗</span>
                         </a>
 
                         <a class="social" href="https://www.instagram.com/ode.sg_official/" target="_blank" rel="noreferrer">
-                            <span class="dot"></span>
-                            TikTok (link me)
-                            <span class="arrow">↗</span>
+                            <span class="dot"></span>TikTok (link me)<span class="arrow">↗</span>
                         </a>
 
                         <a class="social" href="https://wa.me/65XXXXXXXX" target="_blank" rel="noreferrer">
-                            <span class="dot"></span>
-                            WhatsApp (link me)
-                            <span class="arrow">↗</span>
+                            <span class="dot"></span>WhatsApp (link me)<span class="arrow">↗</span>
                         </a>
                     </div>
-
 
                     <div class="note">
                         <div class="noteTitle">Next upgrade</div>
                         <div class="noteText">
-                            Add a real store later (Stripe/PayNow links or full checkout). This site is already “official” and clean.
+                            Add a real store later (Stripe/PayNow links or full checkout).
+                            This site is already official and clean.
                         </div>
                     </div>
                 </div>
@@ -246,11 +311,12 @@
             <div class="footerInner">
                 <div class="footerLeft">
                     <div class="brandInline">
-                        <span class="brandMark" aria-hidden="true"></span>
+                        <img class="brandLogo brandLogoSmall" src="assets/ode.png" alt="ODE logo" />
                         <span class="brandText">ODE</span>
                     </div>
                     <div class="footerTag">To Express, Not Impress</div>
                 </div>
+
                 <div class="footerRight">
                     <a href="#top">Back to top</a>
                     <span class="sep">•</span>
@@ -261,6 +327,15 @@
 
         <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </main>
+
+    <!-- Background Music -->
+    <audio id="bgm" preload="auto" loop>
+        <source src="assets/ode-bgm.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="musicBtn" id="musicBtn" aria-label="Toggle background music">
+        ♪ Music: Off
+    </button>
 
     <script src="script.js"></script>
 </body>

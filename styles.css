@@ -1,13 +1,11 @@
 :root {
     --bg: #0b0b0c;
-    --panel: #101114;
-    --panel2: #0e0f12;
     --text: #f4f5f7;
     --muted: rgba(244,245,247,.72);
     --muted2: rgba(244,245,247,.56);
     --line: rgba(244,245,247,.14);
     --line2: rgba(244,245,247,.08);
-    --accent: #d7c7a3; /* warm luxury gold */
+    --accent: #d7c7a3;
     --shadow: 0 24px 60px rgba(0,0,0,.55);
     --radius: 18px;
     --radius2: 26px;
@@ -24,12 +22,24 @@ html, body {
 
 body {
     margin: 0;
-    background: radial-gradient(1200px 800px at 20% 0%, rgba(215,199,163,.08), transparent 50%), radial-gradient(900px 700px at 100% 40%, rgba(255,255,255,.06), transparent 55%), var(--bg);
+    background: var(--bg);
     color: var(--text);
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     letter-spacing: .2px;
 }
 
+/* SHOOTING STARS CANVAS (behind everything) */
+#starCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+/* Grain */
 .noise {
     pointer-events: none;
     position: fixed;
@@ -37,6 +47,7 @@ body {
     opacity: .08;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    z-index: -1;
 }
 
 .header {
@@ -66,18 +77,27 @@ body {
     color: var(--text);
 }
 
-.brandMark {
-    width: 12px;
-    height: 12px;
-    border-radius: 4px;
-    background: linear-gradient(135deg, rgba(215,199,163,1), rgba(215,199,163,.35));
-    box-shadow: 0 0 0 6px rgba(215,199,163,.08);
-}
-
 .brandText {
     font-weight: 700;
     letter-spacing: 2.5px;
     font-size: 14px;
+}
+
+/* LOGO */
+.brandLogo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(244,245,247,.10);
+    background: rgba(0,0,0,.20);
+    padding: 6px;
+}
+
+.brandLogoSmall {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
 }
 
 .navLinks {
@@ -168,6 +188,32 @@ body {
     line-height: 1.6;
 }
 
+/* Motto block */
+.motto {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mottoLabel {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--muted2);
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line2);
+    background: rgba(255,255,255,.03);
+}
+
+.mottoText {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    color: rgba(244,245,247,.92);
+}
+
 .ctaRow {
     display: flex;
     gap: 12px;
@@ -189,7 +235,6 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 13px;
-    box-shadow: 0 0 0 rgba(0,0,0,0);
     transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
 }
 
@@ -270,6 +315,22 @@ body {
     justify-content: space-between;
     padding: 16px 18px 12px;
     border-bottom: 1px solid var(--line2);
+}
+
+.cardBrand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cardLogo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(244,245,247,.10);
+    background: rgba(0,0,0,.20);
+    padding: 5px;
 }
 
 .chip {
@@ -429,22 +490,151 @@ body {
 }
 
 .linkBtn {
-    appearance: none;
-    border: none;
-    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,245,247,.12);
+    background: rgba(0,0,0,.14);
     color: var(--text);
     font-weight: 700;
+    text-decoration: none;
     cursor: pointer;
     font-size: 12.5px;
     letter-spacing: .4px;
-    opacity: .9;
+    opacity: .92;
 }
 
     .linkBtn:hover {
         opacity: 1;
         color: var(--accent);
+        border-color: rgba(215,199,163,.22);
     }
 
+/* DNA section */
+.dnaGrid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 16px;
+}
+
+.dnaCard {
+    border-radius: var(--radius2);
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--line2);
+    padding: 18px 18px 16px;
+}
+
+.dnaTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.dnaKicker {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(215,199,163,.92);
+}
+
+.dnaMark {
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    background: rgba(215,199,163,.85);
+    box-shadow: 0 0 0 6px rgba(215,199,163,.10);
+}
+
+.dnaText {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* Wear the Message block */
+.wearMessage {
+    max-width: var(--max);
+    margin: 16px auto 0;
+    border-radius: var(--radius2);
+    border: 1px solid rgba(215,199,163,.18);
+    background: radial-gradient(900px 260px at 20% 20%, rgba(215,199,163,.12), transparent 60%), rgba(255,255,255,.03);
+    overflow: hidden;
+}
+
+.wearInner {
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.wearTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(244,245,247,.78);
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,245,247,.12);
+    background: rgba(0,0,0,.20);
+    margin-bottom: 10px;
+}
+
+.wearLeft h3 {
+    margin: 0 0 8px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.wearLeft p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.wearSteps {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(244,245,247,.12);
+    background: rgba(0,0,0,.16);
+}
+
+.stepNum {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(215,199,163,.95);
+}
+
+.stepText {
+    font-weight: 700;
+    color: rgba(244,245,247,.92);
+}
+
+/* About + Contact */
 .aboutGrid {
     max-width: var(--max);
     margin: 0 auto;
@@ -624,6 +814,7 @@ input, textarea {
     line-height: 1.6;
 }
 
+/* Footer */
 .footer {
     padding: 28px 18px 40px;
     border-top: 1px solid var(--line2);
@@ -673,6 +864,7 @@ input, textarea {
     opacity: .5;
 }
 
+/* Toast */
 .toast {
     position: fixed;
     left: 50%;
@@ -722,6 +914,14 @@ input, textarea {
     .contactGrid {
         grid-template-columns: 1fr;
     }
+
+    .dnaGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .wearInner {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 720px) {
@@ -761,3 +961,26 @@ input, textarea {
         grid-template-columns: 1fr;
     }
 }
+.musicBtn {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 100;
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244,245,247,.12);
+    background: rgba(16,17,20,.86);
+    color: rgba(244,245,247,.92);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: .4px;
+    cursor: pointer;
+    box-shadow: 0 18px 55px rgba(0,0,0,.45);
+    backdrop-filter: blur(10px);
+}
+
+    .musicBtn:hover {
+        border-color: rgba(215,199,163,.22);
+        color: var(--accent);
+    }
